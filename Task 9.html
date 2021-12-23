@@ -1,0 +1,131 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Task 9</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+body, html {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	border: 4px solid SteelBlue;
+	position: fixed;
+	margin: 20px 20px 20px 20px;
+	height: 400px;
+	width: 390px;
+
+}
+.display {
+	width: 100%;
+	height: 60px;
+	padding: 20px 0;
+
+}
+.buttons {
+	padding: 0 0 0 20px;
+}
+.row {
+	width: 350px;
+	float: left;
+}
+button.b0 {
+	width: 350px;
+}
+input[type=reset] {
+	width: 60px;
+	height: 60px;
+	float: left;
+	padding: 0;
+	margin: 5px;
+	box-shadow: inset 0px 2px 10px gray;
+	font-size: 20px;
+	font-weight: 700;
+	cursor: pointer;
+}
+input[type=button] {
+	width: 60px;
+	height: 60px;
+	float: left;
+	padding: 0;
+	margin: 5px;
+	box-shadow: inset 0px 2px 10px gray;
+	font-size: 30px;
+	cursor: pointer;
+}
+input[type=text] {
+	width: 350px;
+	height: 60px;
+	float: left;
+	padding: 0;
+	border: 1px solid black;
+	text-align: right;
+	font-weight: 700;
+	font-size: 60px;
+	margin: 0 25px;
+}
+
+</style>
+
+<body>
+	<script>
+
+	function calcNumbers(result){
+		form.displayResult.value=form.displayResult.value+result;
+
+	}
+
+	var backspace = function() {
+
+	var qwerty  = document.getElementById('display').value;
+	document.getElementById('display').value=qwerty.substring(0,qwerty.length -1);
+
+}
+
+	</script>
+	<div class="container">
+		<form name="form">
+		<div class="display">
+		<input id="display" type="text" placeholder="0" name="displayResult" />
+		</div>
+		<div class="buttons">
+	  <div class="row">
+		<input type="button" name="b7" value="7" onClick="calcNumbers(b7.value)">
+	  <input type="button" name="b8" value="8" onClick="calcNumbers(b8.value)">
+	  <input type="button" name="b9" value="9" onClick="calcNumbers(b9.value)">
+	  <input type="button" name="divb" value="/" onClick="calcNumbers(divb.value)">
+		<input type="reset" name="clean" value="С" OnClick="calc.input.value = ''">
+		</div>
+
+		<div class="row">
+		<input type="button" name="b4" value="4" onClick="calcNumbers(b4.value)">
+	  <input type="button" name="b5" value="5" onClick="calcNumbers(b5.value)">
+	  <input type="button" name="b6" value="6" onClick="calcNumbers(b6.value)">
+		<input type="button" name="mulb" value="*" onClick="calcNumbers(mulb.value)">
+		<input type="button" onclick="backspace();" value="<-" />
+		</div>
+
+		<div class="row">
+		<input type="button" name="b1" value="1" onClick="calcNumbers(b1.value)">
+	  <input type="button" name="b2" value="2" onClick="calcNumbers(b2.value)">
+	  <input type="button" name="b3" value="3" onClick="calcNumbers(b3.value)">
+	  <input type="button" name="subb" value="-" onClick="calcNumbers(subb.value)">
+		<input type="button" class="red" value="=" onClick="displayResult.value=eval(displayResult.value)" style="height: 130px;">
+		</div>
+
+		<div class="row" style="position: relative; bottom: 70px;">
+		<input type="button" name="b0" value="0" onClick="calcNumbers(b0.value)" style="width: 130px;">
+	  <input type="button" name="potb" value="." onClick="calcNumbers(potb.value)">
+	  <input type="button" name="addb" value="+" onClick="calcNumbers(addb.value)">
+		</div>
+		</div>
+
+		</form>
+	</div>
+</body>
+
+</html>
